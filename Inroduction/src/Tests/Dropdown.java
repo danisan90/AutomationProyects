@@ -44,7 +44,24 @@ public class Dropdown {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR']//a[contains(text(),'Delhi (DEL)')]")).click();
 		Thread.sleep(2000);
-		//inmediatamente lo que pasa es que se abre el calendario, entonces voy a pasar a un click random para cerrarlo por ahora
+		//inmediatamente lo que pasa es que se abre el calendario
+		
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		if (driver.findElement(By.id("Div1")).getAttribute("style").contains("0.5"))
+		{
+			System.out.println("its enabled");
+				Assert.assertTrue(true);
+		}else
+		{
+			Assert.assertTrue(true);
+		}
+		
+		
+		
+		
+		
+		//driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight.ui-state-active")).click();
+		//select current day
 	}
 
 }
