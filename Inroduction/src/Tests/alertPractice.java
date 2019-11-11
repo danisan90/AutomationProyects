@@ -14,6 +14,9 @@ public class alertPractice {
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://qaclickacademy.com/practice.php");
+		driver.manage().window().maximize();
+		//delete cookies
+		driver.manage().deleteAllCookies();
 		driver.findElement(By.id("name")).sendKeys(text);
 		driver.findElement(By.id("alertbtn")).click();
 		System.out.println(driver.switchTo().alert().getText());
